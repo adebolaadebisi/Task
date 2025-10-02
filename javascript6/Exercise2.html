@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task Counter (Console)</title>
+</head>
+<body>
+  <h2>Task Counter </h2>
+  <button onclick="completeTask()">Complete Task</button>
+  <button onclick="resetTask()">Reset</button>
+  <script>
+    let taskCount = localStorage.getItem("taskCount");
+    if (!taskCount) {
+      taskCount = 0;
+      localStorage.setItem("taskCount", taskCount);
+    }
+    console.log(" Current Task Count:", taskCount);
+    function completeTask() {
+      taskCount++;
+      localStorage.setItem("taskCount", taskCount);
+      console.log("Task Completed! New Count:", taskCount);
+    }
+    function resetTask() {
+      taskCount = 0;
+      localStorage.setItem("taskCount", taskCount);
+      console.log(":arrows_anticlockwise: Task Counter Reset:", taskCount);
+    }
+  </script>
+</body>
+</html>

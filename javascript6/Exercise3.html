@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Theme Switcher</title>
+  <style>
+    body.light { background: white; color: black; }
+    body.dark { background: black; color: white; }
+    body.blue { background: #007BFF; color: white; }
+  </style>
+</head>
+<body>
+  <h2>Theme Switcher</h2>
+  <button onclick="setTheme('light')">Light Mode</button>
+  <button onclick="setTheme('dark')">Dark Mode</button>
+  <button onclick="setTheme('blue')">Blue Mode</button>
+  <script>
+    // Load saved theme on page load
+    window.onload = function() {
+      let savedTheme = localStorage.getItem("theme") || "light";
+      document.body.className = savedTheme;
+      console.log(":art: Applied theme:", savedTheme);
+    };
+    function setTheme(mode) {
+      document.body.className = mode;
+      localStorage.setItem("theme", mode);
+      console.log(":white_tick: Theme changed to:", mode);
+    }
+  </script>
+</body>
+</html>

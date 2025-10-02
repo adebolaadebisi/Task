@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>persistentNotes</title>
+</head>
+<body>
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Notes App (Console)</title>
+</head>
+<body>
+  <h2>Notes App (Check Console)</h2>
+  <input type="text" id="note" placeholder="Type a note...">
+  <button onclick="addNote()">Add Note</button>
+  <script>
+    // Load notes on page load
+    window.onload = function() {
+      displayNotes();
+    };
+    function addNote() {
+      let note = document.getElementById("note").value;
+      if (note.trim() === "") return;
+      let notes = JSON.parse(localStorage.getItem("notes")) || [];
+      notes.push(note);
+      localStorage.setItem("notes", JSON.stringify(notes));
+      document.getElementById("note").value = "";
+      displayNotes();
+    }
+    function displayNotes() {
+      let notes = JSON.parse(localStorage.getItem("notes")) || [];
+      console.log("Saved Notes:", notes);
+    }
+  </script>
+</body>
+</html>
+</body>
+</html>
