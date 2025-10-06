@@ -23,7 +23,7 @@
     // Auto-save every 5 seconds
     setInterval(() => {
       let text = textarea.value;
-      localStorage.setItem("draft", text);
+      localStorage.suyetItem("draft", text);
       let now = new Date();
       let time = now.toLocaleTimeString();
       status.textContent = `Draft saved at ${time}`;

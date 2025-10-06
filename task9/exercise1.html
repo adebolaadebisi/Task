@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>telljoke</title>
+</head>
+<body>
+   <script>
+   function delayedJoke() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve("Here's a funny joke!");
+        }, 3000);
+    });
+}
+// Test
+delayedJoke().then(joke => console.log(joke));
+
+    </script>     
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>deliverorder</title>
+</head>
+<body>
+     <script>
+      function deliverOrder(order) {
+  return new Promise((resolve, reject) => {
+    const success = Math.random() < 0.5; // 50% chance
+    setTimeout(() => {
+      if (success) {
+        resolve(` Delivery successful: ${order}`);
+      } else {
+        reject(` Delivery failed: ${order}`);
+      }
+    }, 1000); // simulate 1 second delay
+  });
+}
+// Use .then() and .catch()
+deliverOrder("order: noodles")
+  .then(message => {
+    console.log(message);
+  })
+  .catch(error => {
+    console.log(error);
+  });
+     </script>
+</body>
+</html>
